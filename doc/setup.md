@@ -19,7 +19,7 @@ Step Two -- run the `gcloud-setup.sh` script.
 ------
 1. Paste this into your Google Cloud Shell:
 
-        git clone https://github.com/benton/k8craft
+        git clone https://github.com/benton/k8craft.git
         ./k8craft/gcloud-setup.sh
 
 
