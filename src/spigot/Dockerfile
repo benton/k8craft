@@ -18,7 +18,7 @@ RUN chown mc.mc /data
 RUN echo "cd /data" >>/home/mc/.profile
 
 # run startup script as user mc
-COPY docker/spigot/start-spigot.sh /usr/local/bin/
+COPY src/spigot/start-spigot.sh /usr/local/bin/
 # USER mc
 ENV SPIGOT_MAX_RAM="1G"
 ENTRYPOINT ["start-spigot.sh"]
