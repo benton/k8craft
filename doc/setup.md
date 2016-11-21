@@ -1,29 +1,26 @@
 How to Run Spigot Minecraft Server on the Google Cloud Platform
 ======
 
-Step One -- create a Google Cloud Platform account and an SSH keypair
-------
 1. [Sign up][1] for a Google Cloud Platform account, then go to the [Cloud Console][2] and create a new Project. Name it anything you like.
 
-2. Choose a geographic zone from [this list][3] where your server will run.
+2. Choose a geographic zone from [this list][3] where your server will run. Then open a Google Cloud Shell by clicking on its icon in the upper-right, and enter the following text. Make sure you change `us-central1-a` to your desired zone:
 
-3. Open a Google Cloud Shell by clicking on its icon in the upper-right, and paste the following text, substituting your desired values for `ZONE` and `DISK_SIZE`:
+        gcloud config set compute/zone us-central1-a
 
-        export ZONE="us-central1-a"
-        export DISK_SIZE="200GB"
-        export MACHINE_TYPE="n1-standard-1"
+3. Create an SSH keypair for your server by pasting in the following:
+
         gcloud compute config-ssh
 
+    You'll need the secret key created in this step to manage the plugins directory, logs and generally anything in the server's working Minecraft directory. Print out the key with the following command and save it somewhere on your workstation.
 
-Step Two -- run the `gcloud-setup.sh` script.
-------
-1. Paste this into your Google Cloud Shell:
+        cat ~/.ssh/google_compute_engine
 
+3. Paste this into your Google Cloud Shell, substituting your desired value for `DISK_SIZE`:
+
+        export DISK_SIZE="200GB"
+        export MACHINE_TYPE="n1-standard-1"
         git clone https://github.com/benton/k8craft.git
-        ./k8craft/gcloud-setup.sh
-
-
-
+        ./k8craft/bin/setup.sh
 
 [1]:https://cloud.google.com/free-trial/
 [2]:https://console.cloud.google.com/home/dashboard
