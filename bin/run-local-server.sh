@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Users docker to run a server on localhost port 25565
+# Uses docker to run a server on localhost port 25565
 # data is stored in k8craft/data/
 set -e
 

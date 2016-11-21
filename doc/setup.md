@@ -20,7 +20,7 @@ How to Run a Minecraft Server on the Google Cloud Platform
         git clone https://github.com/benton/k8craft.git
         ./k8craft/bin/setup.sh
 
-  This step will take a few minutes, as it has to: start a new virtual machine; attach and format the disk; download the docker images to the host; start the Minecraft and SSH servers; and finally, allocate an external IP address for them.
+  This step will take a few minutes, as it has to: create a new storage disk; start a new virtual machine; attach and format the disk; download the docker images to the host; start the Minecraft and SSH servers; and finally, allocate an external IP address for them.
 
   At the end of the process, the private SSH key and public IP address of the server are printed out. These are the two pieces of information required to [maintain your server][4], so write down the IP, then copy and paste the key data into a file on your workstation. Keep the key secret!
 
