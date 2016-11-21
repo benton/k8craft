@@ -27,4 +27,4 @@ Step Two -- run the `gcloud-setup.sh` script.
 
 [1]:https://cloud.google.com/free-trial/
 [2]:https://console.cloud.google.com/home/dashboard
-[3]:https://cloud.google.com/compute/docs/regions-zones/regions-zones
+[3]:https://cloud.google.com/compute/images/zones_diagram.svg

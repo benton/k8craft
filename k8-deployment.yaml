@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: spigot
-        image: benton/spigot:0.1.0-1.11
+        image: benton/spigot:0.1.1-1.11
         ports:
         - containerPort: 25565
         volumeMounts:

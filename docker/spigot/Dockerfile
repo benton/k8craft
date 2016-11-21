@@ -5,7 +5,7 @@ COPY pkg/*.jar /build/
 RUN echo "eula=true" > /build/eula.txt
 
 # OS package list update and auxiliary tools
-RUN apt-get -q2 update && apt-get -y install rsync
+RUN apt-get -q2 update && apt-get -y install rsync sudo
 
 # dedicated user: mc
 RUN addgroup --gid 999 mc

@@ -3,9 +3,11 @@
 set -e
 
 # check for required variables
-export ZONE="us-central1-a"
+export ZONE="us-west1-a"
 export DISK_SIZE="200GB"
 export MACHINE_TYPE="n1-standard-1"
+
+gcloud config set compute/zone $ZONE
 
 echo "Creating $DISK_SIZE disk in zone ${ZONE}..."
 gcloud compute disks create k8craft-data --size=$DISK_SIZE

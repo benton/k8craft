@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   spigot:
-    image: benton/spigot:0.1.0-1.11
+    image: benton/spigot:0.1.1-1.11
     build:
       context: .
       dockerfile: docker/spigot/Dockerfile
