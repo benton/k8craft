@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# builds all images
+# builds all docker images
 set -e
 
 echo "Building Spigot JARs into ./pkg..."
