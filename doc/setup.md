@@ -5,7 +5,7 @@ Step One -- create a Google Cloud Platform account and an SSH keypair
 ------
 1. [Sign up][1] for a Google Cloud Platform account, then go to the [Cloud Console][2] and create a new Project. Name it anything you like.
 
-2. Decide where you'd like to run your server by choosing a geographic zone from [this list][3].
+2. Choose a geographic zone from [this list][3] where your server will run.
 
 3. Open a Google Cloud Shell by clicking on its icon in the upper-right, and paste the following text, substituting your desired values for `ZONE` and `DISK_SIZE`:
 
