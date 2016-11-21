@@ -9,18 +9,18 @@ Step One -- create a Google Cloud Platform account and an SSH keypair
 
 3. Open a Google Cloud Shell by clicking on its icon in the upper-right, and paste the following text, substituting your desired values for `ZONE` and `DISK_SIZE`:
 
-          export ZONE="us-central1-a"
-          export DISK_SIZE="200GB"
-          export MACHINE_TYPE="n1-standard-1"
-          gcloud compute config-ssh
+        export ZONE="us-central1-a"
+        export DISK_SIZE="200GB"
+        export MACHINE_TYPE="n1-standard-1"
+        gcloud compute config-ssh
 
 
 Step Two -- run the `gcloud-setup.sh` script.
 ------
 1. Paste this into your Google Cloud Shell:
 
-          git clone https://github.com/benton/k8craft
-          ./k8craft/gcloud-setup.sh
+        git clone https://github.com/benton/k8craft
+        ./k8craft/gcloud-setup.sh
 
 
 
