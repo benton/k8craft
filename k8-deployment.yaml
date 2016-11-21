@@ -18,7 +18,7 @@ spec:
         - containerPort: 25565
         volumeMounts:
         - name: k8craft-data
-          mountPath: /mc
+          mountPath: /data
         stdin: true
       - name: ssh
         image: benton/ssh:0.1.5
