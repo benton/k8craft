@@ -18,6 +18,7 @@ Step One -- create a Google Cloud Platform account and an SSH keypair
 Step Two -- run the `gcloud-setup.sh` script.
 ------
 1. Paste this into your Google Cloud Shell:
+
           git clone https://github.com/benton/k8craft
           ./k8craft/gcloud-setup.sh
 
