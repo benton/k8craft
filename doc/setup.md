@@ -11,9 +11,7 @@ How to Run a Minecraft Server on the Google Cloud Platform
 
         gcloud compute config-ssh
 
-    You'll need the secret key created in this step to manage the plugins directory, logs and generally anything in the server's working Minecraft directory. It will be printed out by the next step, so copy it and save it somewhere on your workstation.
-
-        cat ~/.ssh/google_compute_engine
+    You'll need the secret key created in this step to manage the plugins directory, logs and generally anything in the server's working Minecraft directory. It will be printed out by the next step.
 
 4. Now run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from this list, but the default offers excellent performance for a server with fewer than around twenty simultaneous players.
 
@@ -24,7 +22,7 @@ How to Run a Minecraft Server on the Google Cloud Platform
 
   This step will take a few minutes, as it has to: start a new virtual machine; attach and format the disk; download the docker images to the host; start the Minecraft and SSH servers; and finally, allocate an external IP address for them.
 
-  At the end of the process, the private SSH key and public IP address of the server are printed out. These are the two pieces of information required to [maintain your server][4].
+  At the end of the process, the private SSH key and public IP address of the server are printed out. These are the two pieces of information required to [maintain your server][4], so write down the IP, then copy and paste the key data into a file on your workstation. Keep the key secret!
 
 
 [1]:https://cloud.google.com/free-trial/

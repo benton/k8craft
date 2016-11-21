@@ -4,7 +4,7 @@ services:
     image: benton/spigot:0.1.1-1.11
     build:
       context: .
-      dockerfile: docker/spigot/Dockerfile
+      dockerfile: src/spigot/Dockerfile
     volumes:
     - ./data:/data
     ports:
@@ -14,7 +14,7 @@ services:
   ssh:
     image: benton/ssh:0.1.5
     build:
-      context: docker/ssh
+      context: src/ssh
       args:
         DEFAULT_USER: "mc"
     volumes:
@@ -24,7 +24,7 @@ services:
     depends_on:
     - java
     build:
-      context: docker/spigot-build
+      context: src/spigot-build
       args:
         SPIGOT_V: "1.11"
     volumes:
@@ -32,6 +32,6 @@ services:
   java:
     image: benton/java:8
     build:
-      context: docker/java
+      context: src/java
       args:
         JAVA_V: "8"
