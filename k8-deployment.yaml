@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8craft
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: k8craft
+    spec:
+      containers:
+      - name: spigot
+        image: benton/spigot:0.1.0-1.11
+        ports:
+        - containerPort: 25565
+        volumeMounts:
+        - name: k8craft-data
+          mountPath: /mc
+        stdin: true
+        tty: true
+      - name: ssh
+        image: benton/ssh:0.1.5
+        env:
+        - name: SSH_USER
+          value: mc
+        - name: SSH_KEY
+          value: ssh-rsa AAAAxxxxxxxxx nobody@none.org
+        ports:
+        - containerPort: 22
+        volumeMounts:
+        - name: k8craft-data
+          mountPath: /data
+      volumes:
+      - name: k8craft-data
+        gcePersistentDisk:
+          pdName: k8craft-data
+          fsType: ext4
