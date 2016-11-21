@@ -2,8 +2,6 @@
 # uses the gcloud tool to tear down the service and cluster
 set -ue
 
-gcloud config set compute/zone $ZONE
-
 echo "Deleting service..."
 kubectl delete deployment,service k8craft
 
