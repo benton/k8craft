@@ -20,14 +20,13 @@ spec:
         - name: k8craft-data
           mountPath: /mc
         stdin: true
-        tty: true
       - name: ssh
         image: benton/ssh:0.1.5
         env:
         - name: SSH_USER
           value: mc
         - name: SSH_KEY
-          value: ssh-rsa AAAAxxxxxxxxx nobody@none.org
+          value: SSH_KEY_DATA
         ports:
         - containerPort: 22
         volumeMounts:
