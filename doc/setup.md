@@ -7,13 +7,15 @@ How to Run a Minecraft Server on the Google Cloud Platform
 
         gcloud config set compute/zone us-central1-a
 
+Network proximity to the server is a key factor in your players' experience, use a zone that's nearest to your expected users!
+
 3. Create an SSH keypair for your server by pasting in the following:
 
         gcloud compute config-ssh
 
     You'll need the secret key created in this step to manage the server beyond examining the logs and issuing commands. The key will be printed out by the next step.
 
-4. Now run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from this list, but the default type offers excellent performance for a server with fewer than around twenty simultaneous players.
+4. Now run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from this list, but the default type offers excellent performance for a server with around twenty simultaneous players.
 
         export DISK_SIZE="200GB"
         export MACHINE_TYPE="n1-standard-1"
