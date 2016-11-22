@@ -14,6 +14,9 @@ spec:
       containers:
       - name: spigot
         image: benton/spigot:0.1.1-1.11
+        env:
+        - name: SPIGOT_MAX_RAM
+          value: 2G
         ports:
         - containerPort: 25565
         volumeMounts:
