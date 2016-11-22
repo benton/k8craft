@@ -21,7 +21,7 @@ spec:
           mountPath: /data
         stdin: true
       - name: ssh
-        image: benton/ssh:0.1.5
+        image: benton/ssh:0.1.6
         env:
         - name: SSH_USER
           value: mc

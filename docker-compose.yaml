@@ -12,7 +12,7 @@ services:
     depends_on:
     - spigot-build
   ssh:
-    image: benton/ssh:0.1.5
+    image: benton/ssh:0.1.6
     build:
       context: src/ssh
       args:
