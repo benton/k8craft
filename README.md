@@ -8,7 +8,7 @@ Overview
 This collection of scripts and instructions allows anyone with a [Google Cloud Platform][1] account to:
 * Spin up a low-cost, highly performant Minecraft or [Spigot][2] server in under 10 minutes, using only a web browser;
 * Perform `restart` and other server console commands using the browser; and
-* Manage the server's data directory over the SSH/SFTP protocol, with easy graphical tools like [Cyberduck][3], or traditional command-line tools like `scp` and `rsync`.
+* Manage the server's data directory over the SSH/SFTP protocol, with graphical tools like [Cyberduck][3], or command-line tools like `scp` and `rsync`.
 
 ----------------
 Features
@@ -27,7 +27,7 @@ Creating a working server does not require any software beyond a web browser for
 ----------------
 Server Management
 ----------------
-Simple management tasks like checking the log and issuing server commands can also be done with a web browser. However, adjusting server settings or installing plugins should be performed by managing the server's data directory and config files. See the [server maintenance instructions][10] for details.
+Simple management tasks like checking the log and issuing server commands are easily done with a web browser. However, adjusting server settings or installing plugins should be performed by managing the server's data directory and config files. See the [server maintenance instructions][10] for details.
 
 ----------------
 Contribution / Development
@@ -55,7 +55,7 @@ This software was created by Benton Roberts _(benton@bentonroberts.com)_
 [4]:https://cloud.google.com/container-engine/
 [5]:http://kubernetes.io/
 [6]:https://www.docker.com/
-[7]:hhttps://github.com/benton/k8craft/blob/master/doc/setup.md
+[7]:https://github.com/benton/k8craft/blob/master/doc/setup.md
 [8]:https://github.com/benton/k8craft/blob/master/doc/teardown.md
 [9]:https://console.cloud.google.com/home/dashboard
 [10]:https://github.com/benton/k8craft/blob/master/doc/maintenance.md
