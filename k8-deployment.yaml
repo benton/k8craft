@@ -12,10 +12,12 @@ spec:
         app: k8craft
     spec:
       containers:
-      - name: spigot
-        image: benton/spigot:0.1.1-1.11
+      - name: mc
+        image: benton/spigot:0.5.0-1.11
         env:
-        - name: SPIGOT_MAX_RAM
+        - name: SERVER_JAR
+          value: spigot
+        - name: MAX_RAM
           value: 2G
         ports:
         - containerPort: 25565

@@ -21,6 +21,10 @@ RUN java -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=tr
   -Dmaven.wagon.http.ssl.ignore.validity.dates=true -jar BuildTools.jar --rev ${SPIGOT_V}
 RUN cp spigot-${SPIGOT_V}.jar spigot.jar
 
+# Copy Vanilla minecraft
+RUN cp work/minecraft_server.${SPIGOT_V}.jar .
+RUN cp minecraft_server.${SPIGOT_V}.jar minecraft_server.jar
+
 # copy output to volume
 VOLUME /pkg
 RUN ls -l *.jar

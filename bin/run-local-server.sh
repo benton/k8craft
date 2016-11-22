@@ -15,4 +15,4 @@ abs_path() { # Returns the absolute path of this script regardless of symlinks
 K8C_HOME=$(cd `abs_path`/.. && pwd)
 
 echo "Running local minecraft server with data in ${K8C_HOME}/data/..."
-docker-compose up spigot
+docker-compose up mc

@@ -8,5 +8,5 @@ rsync -va /build/*.jar /build/eula.txt /data/
 cd /data
 chown mc.mc .
 echo "Starting spigot..."
-exec sudo -Eu mc \
-  java -Xms512M -Xmx${SPIGOT_MAX_RAM} -XX:+UseConcMarkSweepGC -jar spigot.jar
+exec setuser mc \
+  java -Xms512M -Xmx${MAX_RAM} -XX:+UseConcMarkSweepGC -jar ${SERVER_JAR}.jar

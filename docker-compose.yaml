@@ -1,7 +1,7 @@
 version: '2.1'
 services:
-  spigot:
-    image: benton/spigot:0.1.1-1.11
+  mc:
+    image: benton/spigot:0.5.0-1.11
     build:
       context: .
       dockerfile: src/spigot/Dockerfile
@@ -16,7 +16,7 @@ services:
     build:
       context: src/ssh
       args:
-        DEFAULT_USER: "mc"
+        DEFAULT_USER: mc
     volumes:
     - ./data:/data
   spigot-build:
@@ -34,4 +34,4 @@ services:
     build:
       context: src/java
       args:
-        JAVA_V: "8"
+        JAVA_V: 8
