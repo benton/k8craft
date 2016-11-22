@@ -22,12 +22,12 @@ Features
 ----------------
 Installation
 ----------------
-Creating a working server does not require any software beyond a web browser for using the [Google Cloud Console][9]. See the [setup document][7] for detailed instructions.
+Create a working server using the [Google Cloud Console][9]. See the [setup document][7] for detailed instructions.
 
 ----------------
 Server Management
 ----------------
-Simple management tasks like checking the log and issuing server commands are easily done with a web browser. However, adjusting server settings or installing plugins should be performed by managing the server's data directory and config files. See the [server maintenance instructions][10] for details.
+Simple management tasks like checking the log and issuing server commands can be done with a web browser. However, adjusting server settings or installing plugins must be performed by managing the server's data directory and config files. See the [server maintenance instructions][10] for details.
 
 ----------------
 Contribution / Development

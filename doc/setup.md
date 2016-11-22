@@ -11,9 +11,9 @@ How to Run a Minecraft Server on the Google Cloud Platform
 
         gcloud compute config-ssh
 
-    You'll need the secret key created in this step to manage the plugins directory, logs and generally anything in the server's working Minecraft directory. It will be printed out by the next step.
+    You'll need the secret key created in this step to manage the server beyond examining the logs and issuing commands. The key will be printed out by the next step.
 
-4. Now run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from this list, but the default offers excellent performance for a server with fewer than around twenty simultaneous players.
+4. Now run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from this list, but the default type offers excellent performance for a server with fewer than around twenty simultaneous players.
 
         export DISK_SIZE="200GB"
         export MACHINE_TYPE="n1-standard-1"
