@@ -37,14 +37,15 @@ run_cmd("kubectl expose deployment k8craft --type='LoadBalancer'")
 # Wait for availability of external IP address
 cmd = "kubectl describe service k8craft | grep 'LoadBalancer Ingress' | cut -f 2"
 ip  = run_cmd(cmd)
-puts "Waiting for external IP address - this can take about a minute..."
+print "Waiting for external IP address - this can take about a minute..."
 while ip.empty?
   print "."
   sleep 5
   ip = run_cmd(cmd)
 end
 
-puts %Q(All done!
+puts %Q(
+All done!
 Copy the following 3 pieces of information to your workstation...
 ====================================================
 Put this key data into $HOME/.ssh/k8craft.key:
