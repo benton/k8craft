@@ -43,10 +43,28 @@ while ip.empty?
   sleep 5
   ip = run_cmd(cmd)
 end
-puts "===================================================="
-puts "Your private SSH key is:"
-puts "===================================================="
-puts File.read(PRI_KEY)
-puts "===================================================="
-puts "Your Minecraft server IP is: #{ip}"
-puts "===================================================="
+
+puts %Q(All done!
+Copy the following 3 pieces of information to your workstation...
+====================================================
+Put this key data into $HOME/.ssh/k8craft.key:
+====================================================
+#{File.read(PRI_KEY)}
+====================================================
+Make sure the key is only readable to yourself:
+   chmod 0700 ~/.ssh && chmod 0600 ~/.ssh/k8craft.key
+====================================================
+Copy this SSH host configuration into $HOME/.ssh/config:
+====================================================
+Host k8craft
+    User mc
+    HostName #{ip}
+    IdentityFile ~/.ssh/k8craft.key
+    UserKnownHostsFile=/dev/null
+    IdentitiesOnly=yes
+    CheckHostIP=no
+    StrictHostKeyChecking=no
+====================================================
+Finally, note your server IP: #{ip}
+====================================================
+)
