@@ -18,6 +18,7 @@ end
 
 unless File.exists?(PRI_KEY)
   puts "Creating keypair #{PRI_KEY}..."
+  run_cmd("mkdir -p ~/.ssh && chmod 0700 ~/.ssh")
   run_cmd("ssh-keygen -t rsa -f #{PRI_KEY}")
 end
 
