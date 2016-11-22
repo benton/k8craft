@@ -21,13 +21,13 @@ VM_ID=$(gcloud compute instances list --limit=1 \
   --format="value([name])" --regexp "gke-k8craft-default-pool.*")
 echo $VM_ID
 
-echo "Attaching disk $DISK_ID to VM ${VM_ID}..."
+echo "Attaching disk k8craft-data to VM ${VM_ID}..."
 gcloud compute instances attach-disk $VM_ID --disk=k8craft-data
 
 echo "Formatting disk..."
 gcloud compute ssh --command="sudo mkfs.ext4 /dev/sdb" $VM_ID
 
-echo "Detaching disk $DISK_ID..."
+echo "Detaching disk k8craft-data..."
 gcloud compute instances detach-disk $VM_ID --disk=k8craft-data
 
 echo "Deploying k8craft..."
