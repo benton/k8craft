@@ -4,7 +4,7 @@ require 'yaml'
 require 'open3'
 
 TOP_DIR = File.expand_path(File.dirname(File.dirname(__FILE__)))
-PRI_KEY = "#{ENV['HOME']}/.ssh/google_compute_engine"
+PRI_KEY = "#{ENV['HOME']}/.ssh/k8craft-key"
 PUB_KEY = "#{PRI_KEY}.pub"
 
 # Runs a command and prints STDOUT/STDERR. Exits on error, or returns STDOUT.
@@ -14,6 +14,11 @@ def run_cmd(cmd)
   puts stderr unless stderr.empty?
   exit 1 unless status
   stdout
+end
+
+unless File.exists?(PRI_KEY)
+  puts "Creating keypair #{PRI_KEY}..."
+  run_cmd("ssh-keygen -t rsa -f #{PRI_KEY}")
 end
 
 puts "Inserting public SSH key from #{PUB_KEY} into k8-deployment.yaml..."
