@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # uses the gcloud tool to tear down the service and cluster
-set -ue
+set -u
 
 echo "Deleting service..."
 kubectl delete deployment,service k8craft
