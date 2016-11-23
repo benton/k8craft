@@ -56,7 +56,7 @@ Once you're connected, the Minecraft data is stored in `/data`.
 
 Here are your options:
 
-1. If you want to use a graphical tool, I recommend [Cyberduck][2] – it's free, open-source, and integrates nicely with both Windows and OS X. Best of all, it allows you to use a single keystroke (`CMD-K` on OS X) to download a text file and open it in your editor, whereon Cyberduck will write it *back* to the server whenever you save the file! This is super-handy for editing `server.properties` and `spigot.yml`.
+1. If you want to use a graphical tool, I recommend [Cyberduck][2] – it's free, open-source, and integrates nicely with both Windows and OS X. Best of all, it allows you to use a single keystroke (`CMD-K` on OS X) to download a text file and open it in your editor, after which Cyberduck will upload it *back* to the server whenever you save the file! This is super-handy for editing `server.properties` and `spigot.yml`.
 
 2. Traditional command-line tools are great for automation. Here are some examples:
 

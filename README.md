@@ -23,7 +23,7 @@ Features
 
 * Fast and easy [setup][7] and [teardown][8].
 
-* 100% Open-source
+* 100% Open-source.
 
 ----------------
 Installation
