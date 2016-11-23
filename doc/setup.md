@@ -7,27 +7,38 @@ How to Run a Minecraft Server on the Google Cloud Platform
 
         gcloud config set compute/zone us-central1-a
 
-Network proximity to the server is a key factor in your players' experience, use a zone that's nearest to your expected users!
+    Network proximity to the server is a big factor in your players' experience, so use the zone that's nearest to your expected users!
 
-3. Create an SSH keypair for your server by pasting in the following:
+3. If you've never used the Cloud Shell before, configure it for accessing your GCE compute instances. The key created in this step is *not* the key you'll need to manage your server, so don't worry about saving it.
 
         gcloud compute config-ssh
 
-    You'll need the secret key created in this step to manage the server beyond examining the logs and issuing commands. The key will be printed out by the next step.
-
-4. Now run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from this list, but the default type offers excellent performance for a server with around twenty simultaneous players.
+4. Now run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from [this list][5], but the default type offers excellent performance for a server with around twenty simultaneous players.
 
         export DISK_SIZE="200GB"
         export MACHINE_TYPE="n1-standard-1"
         git clone https://github.com/benton/k8craft.git
         ./k8craft/bin/setup.sh
 
-  This step will take a few minutes, as it has to: create a new storage disk; start a new virtual machine; attach and format the disk; download the docker images to the host; start the Minecraft and SSH servers; and finally, allocate an external IP address for them.
+  This step will take a few minutes, as it has to:
+  * create a new storage disk;
+  * start a new virtual machine;
+  * attach and format the disk;
+  * download the docker images to the host;
+  * start the Minecraft and SSH servers; and finally,
+  * allocate an external IP address.
 
-  At the end of the process, the private SSH key and public IP address of the server are printed out. These are the two pieces of information required to [maintain your server][4], so write down the IP, then copy and paste the key data into a file on your workstation. Keep the key secret!
+  At the end of the process, the three bits of information required to [maintain your server][4] are printed out. You'll want to save all three on your workstation:
+
+  1. the private SSH key, which you should save as `$HOME/.ssh/k8craft.key`. Keep this file secret!
+  2. Some SSH client configuration, to paste into `$HOME/.ssh/config`
+  3. the public IP address of the server, for both SSH and Minecraft
+
+  Further details on how to use this information is in the [maintenance instructions][4], but you should be able to connect with Minecraft right away!
 
 
 [1]:https://cloud.google.com/free-trial/
 [2]:https://console.cloud.google.com/home/dashboard
 [3]:https://cloud.google.com/compute/images/zones_diagram.svg
 [4]:https://github.com/benton/k8craft/blob/master/doc/maintenance.md
+[5]:https://cloud.google.com/compute/docs/machine-types
