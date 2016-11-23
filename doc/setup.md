@@ -9,11 +9,13 @@ How to Run Minecraft Server on the Google Cloud Platform
 
     Network proximity to the server is a big factor in your players' experience, so use the zone that's nearest to your expected users!
 
-3. If you've never used the Cloud Shell before, configure it for accessing your virtual machines. The key created in this step is *not* the key you'll need to manage your server, so don't worry about saving it.
+3. If you've never used the Cloud Shell before, you must configure it for accessing your virtual machines over SSH. Run this in the Cloud Shell:
 
         gcloud compute config-ssh
 
-4. Now run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from [this list][5], but the default type offers excellent performance for a server with around twenty simultaneous players.
+    The SSH key you just created is *not* the key you'll use to manage your Minecraft server, so don't worry about saving it (it stays in your Cloud Console's home directory). But it _is_ used in the last step...
+
+4. Run the following commands, substituting your desired value for `DISK_SIZE`. You can also choose another `MACHINE_TYPE` from [this list][5], but the default type offers excellent performance for a server with at least twenty simultaneous players.
 
         export DISK_SIZE="200GB"
         export MACHINE_TYPE="n1-standard-1"
@@ -28,7 +30,7 @@ How to Run Minecraft Server on the Google Cloud Platform
   * start the Minecraft and SSH servers; and finally,
   * allocate an external IP address.
 
-  At the end of the process, the three bits of information required to [maintain your server][4] are printed out. You'll want to save all three on your workstation:
+  At the end of the process, three bits of information which are required to [maintain your server][4] are printed out. You'll want to save all three on your workstation:
 
   * the private SSH key, which you should save as `$HOME/.ssh/k8craft.key`. Keep it secret; keep it safe!
   * Some SSH client configuration, to paste into `$HOME/.ssh/config`

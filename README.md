@@ -17,7 +17,7 @@ Features
 
 * Built on [Google Container Engine][4], which uses best-of-breed infrastructure and software ([Kubernetes][5]/[Docker][6]/Linux4.x) to outperform other cloud providers on reliability, latency and throughput. For Minecraft, this means more uptime, less server lag and faster chunk loading for users!
 
-* Free for 2 months. GCP is currently offering a 2-month/US$300 [free trial][11], which is enough to run quite a powerful server for those 2 months.
+* Free for 2 months. GCP is currently offering a 2-month/US$300 [free trial][11], which is enough to run quite a powerful server for those 2 months. The default configuration costs about US$25 per month and allocates 2.5GB of RAM to Minecraft.
 
 * Lightweight, efficient and secure - runs as a pair of Docker containers that share the server's Minecraft data volume, but are otherwise isolated: one container for the Java process and one container for the SSH daemon. To maximize available RAM and CPU for the Java process, no web server front-end or other extraneous processes are run. 100% open-source.
 
