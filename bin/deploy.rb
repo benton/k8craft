@@ -4,7 +4,7 @@ require 'yaml'
 require 'open3'
 
 TOP_DIR = File.expand_path(File.dirname(File.dirname(__FILE__)))
-PRI_KEY = "#{ENV['HOME']}/.ssh/k8craft-key"
+PRI_KEY = "#{ENV['HOME']}/.ssh/k8craft.key"
 PUB_KEY = "#{PRI_KEY}.pub"
 
 # Runs a command and prints STDOUT/STDERR. Exits on error, or returns STDOUT.
