@@ -31,26 +31,26 @@ Also, remember that once you `op [PLAYER]`, then that player can issue server co
 
 Complex Tasks: changing settings and installing plugins
 ------
-More complex tasks should be carried out by creating, editing or deleting files in the server's Minecraft data directory. To do this, you connect to the server's public IP address over port 22 using the private key generated during setup, and any software that speaks the venerable `SSH` protocol. If you understand that last sentence, then you probably already know how to use `ssh`, `scp`, and `rsync`, which are all installed and waiting for your file-transferring pleasure. If not, don't worry – there are free and simple graphical tools you can use as well. Using either method requires a bit of preliminary setup:
+More complex tasks should be carried out by creating, editing or deleting files in the server's Minecraft data directory. To do this, you connect to the server's public IP address over port 22 using the private key generated during setup, and any software that speaks the venerable `SSH` protocol. If you understand that last sentence, then you probably already know how to use `ssh`, `scp`, and `rsync`, which are all installed for your file-transferring pleasure. If not, don't worry – there are free and simple graphical tools you can use as well. But using either method requires a bit of preliminary setup:
 
 1. First, create a file in your `$HOME/.ssh` directory called `k8craft.key` and paste in the contents of the private key that was printed out during setup.
 
   On OS X, you can enter the following into the Terminal app:
 
-        mkdir -p ~/.ssh && chmod 0700 .ssh
+        mkdir -p ~/.ssh && chmod 0700 ~/.ssh
         touch ~/.ssh/k8craft.key && chmod 0700 ~/.ssh/k8craft.key
-        open -t ~/.ssh/known_hosts
+        open -t ~/.ssh/k8craft.key
 
-  The `chmod` commands are necessary to secure the key, and many SSH clients will not trust the key otherwise.
+  The `chmod` commands are necessary to secure the key; many SSH clients will not trust the key otherwise.
 
-2. Now paste the SSH client configuration block that was printed in setup into `$HOME/.ssh/config`. In an OS X Terminal:
+2. Now paste the SSH client configuration block that was printed during setup into `$HOME/.ssh/config`. In an OS X Terminal:
 
         touch ~/.ssh/config && open -t ~/.ssh/config
 
 
 ### Transferring files to the server, and editing config files
 
-No matter which method you use to manipulate the files on your server, you should use the username `mc` _(most SSH clients will read this username from your `.ssh/config` file by simply requesting host `k8craft`)_.
+No matter which method you use to manipulate the files on your server, you should use the username `mc` _(most SSH clients will read this username from your `.ssh/config` file if you simply request host `k8craft`)_.
 
 The Minecraft data is stored in `/data`.
 
