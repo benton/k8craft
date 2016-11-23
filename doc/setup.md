@@ -1,4 +1,4 @@
-How to Run a Minecraft Server on the Google Cloud Platform
+How to Run Minecraft Server on the Google Cloud Platform
 ======
 
 1. [Sign up][1] for a Google Cloud Platform account, then go to the [Cloud Console][2] and create a new Project. Name it anything you like.
@@ -9,7 +9,7 @@ How to Run a Minecraft Server on the Google Cloud Platform
 
     Network proximity to the server is a big factor in your players' experience, so use the zone that's nearest to your expected users!
 
-3. If you've never used the Cloud Shell before, configure it for accessing your GCE compute instances. The key created in this step is *not* the key you'll need to manage your server, so don't worry about saving it.
+3. If you've never used the Cloud Shell before, configure it for accessing your virtual machines. The key created in this step is *not* the key you'll need to manage your server, so don't worry about saving it.
 
         gcloud compute config-ssh
 
@@ -20,9 +20,9 @@ How to Run a Minecraft Server on the Google Cloud Platform
         git clone https://github.com/benton/k8craft.git
         ./k8craft/bin/setup.sh
 
-  This step will take a few minutes, as it has to:
+  This is the only complex step. It will take a few minutes, because it has to:
   * create a new storage disk;
-  * start a new virtual machine;
+  * start a "cluster" of just a single virtual machine;
   * attach and format the disk;
   * download the docker images to the host;
   * start the Minecraft and SSH servers; and finally,
@@ -30,9 +30,9 @@ How to Run a Minecraft Server on the Google Cloud Platform
 
   At the end of the process, the three bits of information required to [maintain your server][4] are printed out. You'll want to save all three on your workstation:
 
-  1. the private SSH key, which you should save as `$HOME/.ssh/k8craft.key`. Keep this file secret!
-  2. Some SSH client configuration, to paste into `$HOME/.ssh/config`
-  3. the public IP address of the server, for both SSH and Minecraft
+  * the private SSH key, which you should save as `$HOME/.ssh/k8craft.key`. Keep it secret; keep it safe!
+  * Some SSH client configuration, to paste into `$HOME/.ssh/config`
+  * the public IP address of the server, for both SSH and Minecraft
 
   Further details on how to use this information is in the [maintenance instructions][4], but you should be able to connect with Minecraft right away!
 

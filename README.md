@@ -13,7 +13,9 @@ This collection of scripts and instructions allows anyone with a [Google Cloud P
 ----------------
 Features
 ----------------
-* Built on [Google Container Engine][4], which uses best-of-breed infrastructure and software ([Kubernetes][5]/[Docker][6]/Linux4.x) to outperform other cloud providers on reliability, latency and throughput. For Minecraft, this means more uptime, less server lag and faster chunk loading for your users!
+* Runs [Spigot][2] or vanilla Minecraft server
+
+* Built on [Google Container Engine][4], which uses best-of-breed infrastructure and software ([Kubernetes][5]/[Docker][6]/Linux4.x) to outperform other cloud providers on reliability, latency and throughput. For Minecraft, this means more uptime, less server lag and faster chunk loading for users!
 
 * Free for 2 months. GCP is currently offering a 2-month/US$300 [free trial][11], which is enough to run quite a powerful server for those 2 months.
 
