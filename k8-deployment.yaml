@@ -18,7 +18,7 @@ spec:
         - name: SERVER_JAR
           value: spigot
         - name: MAX_RAM
-          value: 2G
+          value: 2560m
         ports:
         - containerPort: 25565
         volumeMounts:
