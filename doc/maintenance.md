@@ -52,7 +52,7 @@ More complex tasks should be carried out by creating, editing or deleting files 
 
 No matter which method you use to manipulate the files on your server, you should use the username `mc` _(most SSH clients will read this username from your `.ssh/config` file if you simply request host `k8craft`)_.
 
-The Minecraft data is stored in `/data`.
+Once you're connected, the Minecraft data is stored in `/data`.
 
 Here are your options:
 

@@ -7,7 +7,7 @@ How to Run Minecraft Server on the Google Cloud Platform
 
         gcloud config set compute/zone us-central1-a
 
-    Network proximity to the server is a big factor in your players' experience, so use the zone that's nearest to your expected users!
+    Proximity to the server is a big factor in your players' experience, so use the zone that's nearest to your expected users!
 
 3. If you've never used the Cloud Shell before, you must configure it for accessing your virtual machines over SSH. Run this in the Cloud Shell:
 
